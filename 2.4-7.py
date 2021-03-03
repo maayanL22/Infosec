@@ -1,6 +1,3 @@
-unlocking information security part I lesson 2.4 hackxercise 7 final and correct code:
-
-
 from collections import Counter
 
 def get_max(l):
@@ -26,15 +23,12 @@ def is_english(s):
     
     print(s)
     for c in s:
-        #print(c)
         asc = ord(c)
-        #print(asc)
         if((asc < 65) or (asc > 90 and asc < 98) or (asc > 122)):
             print("hola")
             s = s.replace(c,'')
     
     s = s.lower()
-    #print("this is s: ",s)
     letts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     for c in s:
         pl = ord(c) - 97
