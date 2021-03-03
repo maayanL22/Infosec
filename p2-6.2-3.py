@@ -1,12 +1,9 @@
-information security part II lesson 6.2 hackxercise 3 final code:
-
 from scapy.all import *
 from scapy.layers.http import *
 import sys # ignore
 sys.path.insert(0,'.') # ignore
 from create_recording import recording_path # the path to the pcap file of this assignment
 
-#### Don't change the code until this line ####
 
 def show_username_password():
     bind_layers(TCP, HTTP, dport=8000)
@@ -14,7 +11,6 @@ def show_username_password():
     packets = rdpcap(recording_path)
     pass # print Username and Password
     for packet in packets:
-        #print(packet.command())
         print(raw(packet))
 
 show_username_password()
