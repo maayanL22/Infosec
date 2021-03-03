@@ -1,4 +1,3 @@
-unlocking information security part I lesson 3.4 hackxercise 3 final and correct code:
 import itertools
 
 def simple_hash(s):
@@ -20,22 +19,14 @@ def crack(s):
     alphnumssymb = alph + nums + symb
     print(alphnumssymb)
     '''
-    #print(chr(7))
     i = 0
     opt = ''
     while(i < 128):
         #print(chr(i))
         opt = opt + chr(i)
         i += 1
-    #print("opt: ",opt)
-    #print("s: ",s)
-    #print(simple_hash(s))
     for l1 in itertools.product(opt, repeat = length):
-        #print(l1)
         fhash = ''.join(l1)
-        #if(simple_hash(fhash) == 65543):
-            #print("gmorgnrgf")
-        #print(fhash)
         if((s != fhash) and (simple_hash(s) == simple_hash(fhash))):
             return fhash
     
