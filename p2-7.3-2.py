@@ -1,5 +1,3 @@
-unlocking information security part II lesson 7.3 hackxercise 2 final code:
-
 n = 33
 e = 7
 d = 3
@@ -12,5 +10,4 @@ def encrypt(m, public_key):
 
 def decrypt(c, private_key):
     pass # TODO
-    #private_key[1] is d
     return pow(c,private_key[1]) % n
