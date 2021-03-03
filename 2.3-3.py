@@ -1,6 +1,3 @@
-unlocking information security part I lesson 2.3 hackxercise 3 final and correct solution:
-
-
 def encrypt(plaintext, k):
     pass # Do stuff and return ciphertext
     length = len(k)
