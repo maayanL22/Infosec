@@ -1,5 +1,3 @@
-unlocking information security part II lesson 7.2 hackxercise 1 final code:
-
 import random
 
 
