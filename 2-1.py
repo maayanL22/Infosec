@@ -1,6 +1,3 @@
-unlocking information security part I lesson 2 hackxercise 1:
-final code that is correct:
-
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 def encrypt(plaintext, k):
