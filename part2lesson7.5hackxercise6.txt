@@ -1,0 +1,47 @@
+unlocking information security part II lesson 7.5 hackxercise 6 final code:
+
+from hashlib import sha1
+
+ipad = b'123455678'
+opad = b'abcdefghi'
+
+def xor_strings(str1,str2):
+    r1 = [ord(a) ^ ord(b) for a,b in zip(str1,str2)]
+    r2 = []
+    for asc in r1:
+        r2.append(chr(asc))
+    return ''.join(r2)
+
+def weak_hmac(m, k, ipad, opad):
+    pass # TODO
+    ipad1 = ipad.decode('utf-8')
+    #opad1 = opad.decode('utf-8')
+    k1 = k.decode('utf-8')
+    #opad1 = int(opad1)
+    #ipad1 = int(ipad)
+    #k1 = int(k)
+    #r1 = [ord(a) ^ ord(b) for a,b in zip(k1,ipad1)]
+    r1 = xor_strings(k1, ipad1)
+    print(r1)
+    #r11 = str(r1)
+    m1 = m.decode('utf-8')
+    r11 = r1 + m1
+    r11 = r11.encode('utf-8')
+    first = sha1(r11).hexdigest()
+    opad1 = opad.decode('utf-8')
+    #print(r1)
+    #print(type(opad1))
+    #print(k)
+    k2 = k.decode('utf-8')
+    #sopad = [ord(a) ^ ord(b) for a,b in zip(k2,opad1)]
+    sopad = xor_strings(k2, opad1)
+    print(sopad)
+    #s3 = ''.join(sopad)
+    #print(s3)
+    #opad1 = change_to_be_hex(opad1)
+    #print(type(opad1))
+    final = sopad + first
+    final = final.encode('utf-8')
+    print(sha1(final).hexdigest())
+    #r12 = int(furst)
+    return sha1(final).hexdigest()

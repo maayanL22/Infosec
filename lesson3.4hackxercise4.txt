@@ -1,0 +1,36 @@
+unlocking information security part I lesson 3.4 hackxercise 4 final and correct code: 
+
+import hashlib
+import itertools
+
+
+def weak_md5(s):
+    return hashlib.md5(s).digest()[:5]
+
+
+def find_collisions():
+    #return # return (s1, s2) such that s1 != s2 and weak_md5(s1) == weak_md5(s2)
+    length = 5
+    colldict = {
+        
+    }
+    
+    i = 0
+    opt = ''
+    while(i < 128):
+        opt = opt + chr(i)
+        i += 1
+    
+    for som in itertools.product(opt, repeat = length):
+        comb = ''.join(som)
+        hashkey = weak_md5(comb)
+        #print(comb)
+        #print(hashkey)
+        if hashkey in colldict:
+            #print(colldict[hashkey])
+            return colldict[hashkey],comb
+        else:
+            colldict[hashkey] = comb
+    
+    
+    return 'not','found'

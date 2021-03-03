@@ -1,0 +1,10 @@
+unlocking information security part II lesson 8.1 hackxercise 1 final code:
+
+# imports go here
+from urllib.parse import urlparse
+
+def parse_url(url):
+    pass # TODO
+    o = urlparse(url)
+    #print((o.scheme, o.netloc, o.path))
+    return (o.scheme, o.netloc, o.path)

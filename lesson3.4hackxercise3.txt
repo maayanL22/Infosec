@@ -1,0 +1,42 @@
+unlocking information security part I lesson 3.4 hackxercise 3 final and correct code:
+import itertools
+
+def simple_hash(s):
+    r = 7
+    for c in s:
+        r = (r * 31 + ord(c)) % 2**16
+    return r
+
+
+def crack(s):
+    #return # return s2 such that s != s2 and simple_hash(s) == simple_hash(s2)
+    length = len(s)
+    if(len(s) == 0):
+        length = 4
+    '''
+    nums = '0123456789'
+    alph = 'abcdefghijklmnopqrstuvwxyz'
+    symb = '!@#$%^&*()_+-=[]{}.,/?\|:;<>'
+    alphnumssymb = alph + nums + symb
+    print(alphnumssymb)
+    '''
+    #print(chr(7))
+    i = 0
+    opt = ''
+    while(i < 128):
+        #print(chr(i))
+        opt = opt + chr(i)
+        i += 1
+    #print("opt: ",opt)
+    #print("s: ",s)
+    #print(simple_hash(s))
+    for l1 in itertools.product(opt, repeat = length):
+        #print(l1)
+        fhash = ''.join(l1)
+        #if(simple_hash(fhash) == 65543):
+            #print("gmorgnrgf")
+        #print(fhash)
+        if((s != fhash) and (simple_hash(s) == simple_hash(fhash))):
+            return fhash
+    
+    return 'couldnt crack'

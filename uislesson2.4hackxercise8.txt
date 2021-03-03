@@ -1,0 +1,84 @@
+unlocking information security part I lesson 2.4 hackxercise 8 final and correct code:
+
+
+from Crypto.Cipher import AES
+from Crypto import Random
+import itertools
+import sys # ignore
+sys.path.insert(0,'.') # ignore
+from Root.prev_func import aes_decrypt, is_english, aes_encrypt
+from itertools import product
+
+def aes_encrypt1(plaintext, k, iv):
+    pass # return iv + ciphertext (in bytes)
+    #plaintext = to_bytes(plaintext.encode('utf-8'))
+    #print(plaintext)
+    #print(k)
+    #print("plain: ", plaintext)
+    #print("k: ",k)
+    #print("iv ",iv)
+    cipher = AES.new(k,AES.MODE_CBC, iv)
+    #print(plaintext)
+    #print(cipher.encrypt(plaintext))
+    #print(iv)
+    #print(iv + cipher.encrypt(plaintext))
+    #print("plain text: ",plaintext)
+    return (iv + cipher.encrypt(plaintext))
+    
+
+
+
+
+
+def brute_force_aes(ciphertext):
+    pass # return plaintext (in 'latin1', from aes_decrypt()), k
+    #print(ciphertext)
+    #txt = aes_decrypt(ciphertext,b'0360001110000000')
+    #print(txt)
+    #print(txt.encode('utf-8') == ciphertext)
+    #iv = ciphertext[:AES.block_size]
+    #print(aes_encrypt1(txt, b'0360001110000000', iv))
+    #return txt
+    #keylist = [0,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    iv = ciphertext[:AES.block_size]
+    #i = 0
+    #cnt = 3
+    #key = ''.join(map(str, keylist))
+    #print(key)
+    #key1 = key.encode('utf-8')
+    #print(len(key1))
+    #txt = aes_decrypt(ciphertext,key1)
+    l1 = [0,3,6]
+    l3 = [0,0,0,0,0,0,0]
+    #print(type(l1))
+    #print(type(l3))
+    for nums in product([0,1,2,3,4,5,6,7,8,9], repeat = 6):
+        #alltog = l1 + nums + l3
+        #print(alltog)
+        #print(type(nums))
+        ln = list(nums)
+        #print(nums)
+        #print(type(ln))
+        alltog = l1 + ln + l3
+        #print(alltog)
+        fnl = ''.join(map(str, alltog))
+        #print(fnl)
+        fnl1 = fnl.encode('utf-8')
+        print(fnl1)
+        #print(len(fnl1))
+        #if(aes_encrypt1())
+        txt = aes_decrypt(ciphertext, fnl1)
+        #print(len(txt))
+        #print(type(txt))
+        if((len(txt) % 16 == 0) and (len(txt.encode('utf-8')) % 16 == 0)):
+            #print("lalalalala")
+            #print(len(txt.encode('utf-8')))
+            if((aes_encrypt1(txt, fnl1, iv) == ciphertext) and (is_english(txt) == True)):
+                #print("lululululu")
+                #print(txt)
+                return txt,fnl1
+    return txt,fnl1
+    
+    
+    
+    

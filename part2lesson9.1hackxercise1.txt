@@ -1,0 +1,7 @@
+unlocking information security part II lesson 9.1 hackxercise 1 final code:
+
+def quine():
+    pass
+    s = 's = %r\nprint(s %% s)'
+    print(s % s)
+    return s
