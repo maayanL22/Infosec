@@ -1,10 +1,5 @@
-unlocking information security part I lesson 2.3 hackxercise 4 final and correct code:
-
-
 def get_prg(plaintext_size, k):
     pass # return keystream
-    #print("key is: ",k)
-    #print("size: ",plaintext_size)
     i = j = 0
     klist = list(k)
     keystream = list(k) 
