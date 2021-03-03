@@ -1,5 +1,3 @@
-unlocking information security part I lesson 3.4 hackxercise 4 final and correct code: 
-
 import hashlib
 import itertools
 
@@ -24,10 +22,7 @@ def find_collisions():
     for som in itertools.product(opt, repeat = length):
         comb = ''.join(som)
         hashkey = weak_md5(comb)
-        #print(comb)
-        #print(hashkey)
         if hashkey in colldict:
-            #print(colldict[hashkey])
             return colldict[hashkey],comb
         else:
             colldict[hashkey] = comb
