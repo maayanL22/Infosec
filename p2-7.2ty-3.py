@@ -1,6 +1,3 @@
-unlocking information security part II lesson 7.2 test yourself 3 code:
-
-
 import math
 
 def reset_false(l1,x):
@@ -29,18 +26,14 @@ def check_true(l1):
 def get_bases(x):
     bases = []
     pnums = []
-    #print("x: ", x)
     reset_false(pnums,x)
-    #print(pnums)
     num = 1
     i = 1
-    while(num < x):
-        #print(num)
+    while(num < x):m)
         while(i < x):
             n = pow(num,i) % x
             pnums[n-1] = True
-            i += 1
-        #print(pnums)    
+            i += 1   
         if(check_true(pnums) == True):
             bases.append(num)
         i = 1
