@@ -1,6 +1,3 @@
-unlocking information security part II lesson 7.4 hackxercise 5 final code:
-
-
 from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA512, SHA384, SHA256, SHA, MD5
 from Crypto.Signature import PKCS1_v1_5
@@ -12,10 +9,8 @@ public_key = key.publickey().exportKey('PEM')
 
 def sign(m, private_key):
     pass # TODO
-    #print(m)
     m = str(m)
     m = m.encode('utf-8')
-    #print(m)
     hasher = SHA256.new(m)
     signer = PKCS1_v1_5.new(key)
     signature = signer.sign(hasher)
@@ -28,8 +23,6 @@ def verify(m, s, public_key):
     hasher = SHA256.new(m)
     verifier = PKCS1_v1_5.new(key)
     if verifier.verify(hasher, s):
-        #print('Nice, the signature is valid!')
         return True
     else:
-        #print('No, the message was signed with the wrong private key or modified')
         return False
