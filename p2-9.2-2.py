@@ -1,29 +1,20 @@
-unlocking information security part II lesson 9.2 hackxercise 2 final code:
-
 from hashlib import sha1
 
 def sign(line):
     pass
-    #print(line)
     statsign = sha1(line).hexdigest()
-    #print(statsign)
-    #print(len(statsign))
     return statsign[0:20]
 
 def scan(paths, signature):
     pass
-    #print(paths)
     print("sign: ",signature)
     final = []
     is_in = False
     for path in paths:
         path1 = open(path,'r')
         lines = path1.readlines()
-        #print(lines)
         for line in lines:
-            #print(line.rstrip())
             line1 = line.rstrip().encode('utf-8')
-            #print(line1)
             statline = sha1(line1).hexdigest()
             statline1 = statline[0:20]
             print(statline1)
@@ -33,6 +24,5 @@ def scan(paths, signature):
         is_in = False
         path1.close()
     
-    #print(final)
     return final
     
