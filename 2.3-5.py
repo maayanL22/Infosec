@@ -1,7 +1,3 @@
-unlocking information security part I lesson 2.3 hackxercise 5 final and correct code:
-
-
-
 from Crypto.Cipher import ARC4
 
 def rc4(plaintext, key):
