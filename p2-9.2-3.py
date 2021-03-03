@@ -1,17 +1,7 @@
-unlocking information security part II lesson 9.2 hackxercise 3 final code:
-
-# x = x * 2
-# return x
-
 def first(x):
     pass
     x = x + x
     return x
-
-# s = 0
-# for i in range(n):
-#     s += i
-# return s
 
 def second(n):
     pass
