@@ -10,10 +10,6 @@ def aes_encrypt1(plaintext, k, iv):
     pass # return iv + ciphertext (in bytes)
     cipher = AES.new(k,AES.MODE_CBC, iv)
     return (iv + cipher.encrypt(plaintext))
-    
-
-
-
 
 
 def brute_force_aes(ciphertext):
