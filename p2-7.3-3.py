@@ -1,5 +1,3 @@
-unlocking information security part II lesson 7.3 hackxercise 3:
-
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 
@@ -15,23 +13,15 @@ def encrypt(m, public_key):
     rsa_public_key = RSA.importKey(public_key)
     encryptor = PKCS1_OAEP.new(rsa_public_key)
     encrypted = encryptor.encrypt(m)
-    # return encrypted, key
-    print(encrypted)
     return encrypted, key
 
 def decrypt(c, private_key):
     pass # TODO
-    #print("private: ", private_key)
-    #print("c: ", c)
-    #print("decryption: ",private_key.decrypt(c))
     print(c)
     rsa_private_key = RSA.importKey(private_key)
     rsa_private_key = PKCS1_OAEP.new(rsa_private_key)
-    #print("decryption: ",rsa_private_key.decrypt(c))
     decoded_m = rsa_private_key.decrypt(c).decode('utf-8')
-    # return rsa_private_key.decrypt(c), private_key
     number_m = int(decoded_m)
-    # return decoded_m, private_key
     return number_m, private_key
 
 encrypt_result = encrypt(1234567890, public_key)
