@@ -1,5 +1,3 @@
-unlocking information security part II lesson 9.3 hackxercise 4.1 final code:
-
 import re
 
 CODE = '''
@@ -8,7 +6,6 @@ def authenticate(username, password):
 '''
 
 def compile_(format_):
-    #print(type(format_))
     print(format_)
     fr = format_.split('\n')
     print(fr[1])
@@ -23,13 +20,6 @@ def compile_(format_):
     length = len(re.search(r'USERNAME: (.*)', format_).group(1).split(' '))
     print(length)
     print(re.search(r'USERNAME: (.*)', format_).group(1).split(' ')[length-1])
-    #format_ = format_ + 'bla'
-    #usernames = re.search(r'USERNAME: (.*)', format_).group(0)
-    #print(usernames)
-    #neeww = usernames + ', hacker'
-    #print(neeww)
-    #new_string = re.sub(usernames, '', neeww) 
-    #print('lodfnogin', re.search(r'USERNAME: (.*)', format_).group(0)).
     username = re.search(r'USERNAME: (.*)', format_).group(1).split(' ')[length-1]
     password = re.search(r'PASSWORD: (.*)', format_).group(1).split(' ')[length-1]
     return CODE.format(username=username, password=password)
