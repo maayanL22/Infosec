@@ -1,7 +1,3 @@
-unlocking information security part II lesson 9.3 hackxercise 4.2 final code:
-
-# Don't change this:
-
 import re
 
 CODE = '''
@@ -14,24 +10,17 @@ def compile_(format_):
     password = re.search(r'PASSWORD: (.*)', format_).group(1)
     return CODE.format(username=username, password=password)
 
-# The rest you can change:
 globformat = ''
 
 def run_compiler(format_):
     globformat = format_
-    #print(globformat)
     glist = globformat.split('\n')
-    #print(glist)
     l1 = glist[1].split(' ')
     l2 = glist[2].split(' ')
-    #print(l1)
-    #print(l2)
     s1 = l1[0] + ' hacker'
     s2 = l2[0] + ' 1234'
     l1[0] = s1
     l1[1] = s2
     final = '\n'.join(l1)
-    #print(final)
     format_ = final
-    #print(format_)
     return compile_(format_)
