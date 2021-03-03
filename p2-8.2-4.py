@@ -1,5 +1,3 @@
-unlocking information security part II lesson 8.2 hackxercise 4 final code:
-
 import sqlite3
 
 with sqlite3.connect('db.sqlite3') as connection:
@@ -11,5 +9,5 @@ with sqlite3.connect('db.sqlite3') as connection:
 def authenticate(username, password):
     with sqlite3.connect('db.sqlite3') as connection:
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM users WHERE username = ':param1' AND password = ':param2'".format(username, password)) # change this line only
+        cursor.execute("SELECT * FROM users WHERE username = ':param1' AND password = ':param2'".format(username, password))
         return len(cursor.fetchall()) > 0
