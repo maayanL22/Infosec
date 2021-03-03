@@ -1,12 +1,8 @@
-unlocking information security part II lesson 6.3 hackxercise 4 final code: 
-
 from scapy.all import *
 from scapy.layers.http import *
 import sys # ignore
 sys.path.insert(0,'.') # ignore
 from create_recording import recording_path # the path to the pcap file of this assignment
-
-#### Don't change the code until this line ####
 
 def show_source_destination_ip_address():
     packets = rdpcap(recording_path)
