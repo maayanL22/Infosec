@@ -1,17 +1,12 @@
-unlocking information security part II lesson 8.1 hackxercise 2 final code:
-
 import requests
 import json
 
 def get():
     pass #TODO
     resp = requests.get('http://httpbin.org/status/204')
-    #print(resp)
-    #print(resp.status_code)
     return resp.status_code
 
 def post():
     pass #TODO
     resp = requests.post('http://httpbin.org/post', data = {'y' : 2, 'x' : 1})
-    #print(resp)
     return resp
